@@ -1,0 +1,50 @@
+[
+  {
+    "name": "fedoraproject.org",
+    "type": "HTTP",
+    "expected_status": "OK"
+  },
+  {
+    "name": "www.freebsd.org",
+    "type": "HTTP",
+    "expected_status": "OK"
+  },
+  {
+    "name": "torproject.org",
+    "type": "HTTP",
+    "expected_status": "OK"
+  },
+  {
+    "name": "jhcloos.com",
+    "type": "HTTP",
+    "expected_status": "OK"
+  },
+  {
+    "name": "www.kumari.net",
+    "type": "HTTP",
+    "expected_status": "OK",
+    "comments": "The TLS certificate is for *.kumari.net, allowing you to test the use of wildcards."
+  },
+  {
+    "name": "www.bortzmeyer.org",
+    "type": "HTTP",
+    "expected_status": "OK",
+    "comments": "The CA is CAcert, a free CA that is not commonly configured in web browsers. So, PKIX won't work."
+  },
+  {
+    "name": "jhcloos.com",
+    "type": "HTTP",
+    "expected_status": "OK"
+  },
+  {
+    "name": "badhash.dane.huque.com",
+    "type": "HTTP",
+    "expected_status": "Broken",
+    "comments": "The signed TLSA record (DANE-EE) contains a hash value that doesn't match the server certificate."
+  },
+  {
+    "name": "denic.de",
+    "type": "SMTP",
+    "expected_status": "OK"
+  }
+]
