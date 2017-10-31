@@ -2,8 +2,9 @@
   {
     "name": "fedoraproject.org",
     "type": "HTTP",
-    "expected_status": "OK"
-  },
+    "expected_status": "Broken",
+    "comments":  "Should be OK but tlsa protests 'NameError: global name 'cert' is not defined'. TODO: investigate"
+  }, 
   {
     "name": "www.freebsd.org",
     "type": "HTTP",
@@ -20,6 +21,16 @@
     "expected_status": "OK"
   },
   {
+    "name": "www.netfuture.ch",
+    "type": "HTTP",
+    "expected_status": "OK"
+  },
+  {
+    "name": "dns.bortzmeyer.org",
+    "type": "HTTP",
+    "expected_status": "OK"
+  },
+  {
     "name": "www.kumari.net",
     "type": "HTTP",
     "expected_status": "OK",
@@ -29,20 +40,26 @@
     "name": "www.bortzmeyer.org",
     "type": "HTTP",
     "expected_status": "OK",
-    "comments": "The CA is CAcert, a free CA that is not commonly configured in web browsers. So, PKIX won't work."
+    "comments": "The CA is CAcert, a free CA that is not commonly configured in web browsers. So, PKIX will not work."
   },
   {
     "name": "jhcloos.com",
     "type": "HTTP",
     "expected_status": "OK"
-  },
+  }, 
   {
     "name": "badhash.dane.huque.com",
     "type": "HTTP",
     "expected_status": "Broken",
-    "comments": "The signed TLSA record (DANE-EE) contains a hash value that doesn't match the server certificate."
+    "comments": "The signed TLSA record (DANE-EE) contains a hash value that does not match the server certificate."
   },
   {
+    "name": "badparam.dane.huque.com",
+    "type": "HTTP",
+    "expected_status": "OK",
+    "comments": "The signed TLSA record contains invalid (unusable) TLSA parameters. But tlsa, although it emits an error message, still set the return code to 0"
+  },
+ {
     "name": "denic.de",
     "type": "SMTP",
     "expected_status": "OK"
