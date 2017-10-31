@@ -63,5 +63,10 @@
     "name": "denic.de",
     "type": "SMTP",
     "expected_status": "OK"
+  },
+  {
+    "name": "ip.o2g.fr",
+    "type": "HTTP",
+    "expected_status": "OK"
   }
 ]
